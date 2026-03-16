@@ -1,0 +1,15 @@
+{
+  "name": "Keyboard Shortcuts",
+  "description": "Verify keyboard shortcuts open/close UI within 200ms budget",
+  "checkpoint": "doc-loaded",
+  "steps": [
+    { "action": "press", "key": "Meta+k" },
+    { "action": "waitFor", "selector": "[data-testid='command-palette'], .command-palette, [role='dialog']" },
+    { "action": "press", "key": "Escape" },
+    { "action": "waitForGone", "selector": "[data-testid='command-palette'], .command-palette, [role='dialog']" },
+    { "action": "press", "key": "Meta+/" },
+    { "action": "waitFor", "selector": "[data-testid='help-panel'], .help-panel, [role='dialog']" },
+    { "action": "press", "key": "Escape" },
+    { "action": "waitForGone", "selector": "[data-testid='help-panel'], .help-panel, [role='dialog']" }
+  ]
+}

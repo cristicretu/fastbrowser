@@ -1,0 +1,15 @@
+{
+  "name": "Mention Flow",
+  "description": "Test @ mention interaction loop — popover should appear within 200ms",
+  "checkpoint": "doc-loaded",
+  "steps": [
+    { "action": "click", "selector": "[data-testid='editor'], .editor, [contenteditable]" },
+    { "action": "type", "text": "@" },
+    { "action": "waitFor", "selector": "[data-testid='mention-popover'], .mention-popover, [role='listbox']" },
+    { "action": "type", "text": "jan" },
+    { "action": "waitFor", "selector": "[data-testid='mention-option'], .mention-option, [role='option']" },
+    { "action": "press", "key": "Enter" },
+    { "action": "waitFor", "selector": "[data-testid='mention-chip'], .mention-chip, .mention" },
+    { "action": "assertText", "selector": "[data-testid='mention-chip'], .mention-chip, .mention", "contains": "jan" }
+  ]
+}

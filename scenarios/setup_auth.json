@@ -1,0 +1,15 @@
+{
+  "name": "Setup Auth",
+  "description": "Login and create authed checkpoint for subsequent scenarios",
+  "steps": [
+    { "action": "navigate", "url": "http://localhost:3000/login", "timeout": 10000 },
+    { "action": "waitFor", "selector": "input[name='email'], input[type='email'], #email", "timeout": 5000 },
+    { "action": "fill", "selector": "input[name='email'], input[type='email'], #email", "value": "test@example.com" },
+    { "action": "fill", "selector": "input[name='password'], input[type='password'], #password", "value": "testpassword123" },
+    { "action": "click", "selector": "button[type='submit']" },
+    { "action": "waitForNetwork", "timeout": 5000 },
+    { "action": "waitFor", "selector": "[data-testid='dashboard'], .dashboard, main", "timeout": 5000 },
+    { "action": "assertURL", "contains": "/dashboard" },
+    { "action": "checkpoint", "name": "authed" }
+  ]
+}

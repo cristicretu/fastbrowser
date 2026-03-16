@@ -1,0 +1,15 @@
+{
+  "name": "Sidebar Tabs",
+  "description": "Verify sidebar tab switching is fast — each panel should load within 200ms",
+  "checkpoint": "doc-loaded",
+  "steps": [
+    { "action": "click", "selector": "[data-testid='sidebar-toggle'], .sidebar-toggle, button[aria-label='Toggle sidebar']" },
+    { "action": "waitFor", "selector": "[data-testid='sidebar'], .sidebar, aside" },
+    { "action": "click", "selector": "[data-testid='tab-comments'], [data-tab='comments'], button:has-text('Comments')" },
+    { "action": "waitFor", "selector": "[data-testid='comments-panel'], .comments-panel" },
+    { "action": "click", "selector": "[data-testid='tab-history'], [data-tab='history'], button:has-text('History')" },
+    { "action": "waitFor", "selector": "[data-testid='history-panel'], .history-panel" },
+    { "action": "click", "selector": "[data-testid='tab-comments'], [data-tab='comments'], button:has-text('Comments')" },
+    { "action": "waitFor", "selector": "[data-testid='comments-panel'], .comments-panel" }
+  ]
+}
